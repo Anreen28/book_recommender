@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<style>
+
+</style>
+<body style="background-color: #FAF0E6">
+<nav style="background-color: #352F44;color:#FAF0E6; display: flex; justify-content: center; padding: 3px; height: 50px">
+    <p style="font-size: 2rem">Book Recommender</p>
+</nav>
+    <nav style="background-color: #5C5470;color:#FAF0E6;">
+                <ul class="mmenu" style="display: flex;">
+                    <li style="list-style: none; padding:5px; padding-right: 10px"><a href="/" style=" text-decoration: none; color:#FAF0E6">HOME</a></li>
+                    <li style="list-style: none; padding:5px; padding-right: 10px"><a href="/top" style=" text-decoration: none; color:#FAF0E6">TOP-50</a></li>
+                    <li style="list-style: none; padding:5px;padding-right: 10px"><a href="/recommend" style=" text-decoration: none; color:#FAF0E6">RECOMMEND</a></li>
+                </ul>
+    </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="color: #352F44; font-size: 50px; padding: 10px; text-align: center">Dive into the Top 50 Must-Read Books</h1>
+        </div>
+
+        {%for i in range(book_name|length)%}
+            <div class="col-md-3" style="margin-top: 50px; background-color: transparent; padding: 20px">
+                <div class="card" style="background-color: #B9B4C7; max-height: 400px">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{ image[i]}}" style="max-height: 200px">
+                        <p style="color: #352F44">{{book_name[i]}}</p>
+                        <p style="color: #352F44">{{author[i]}}</p>
+                        <p style="color: #352F44">Votes- {{votes[i]}}</p>
+                        <p style="color: #352F44">Ratings- {{rating[i]}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
